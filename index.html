@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sophia Ma is a student exploring Python and AI who also loves traveling.">
+    <title>Sophia Ma — Student Exploring Python &amp; AI</title>
+    <style>
+      :root {
+        --cream: #fff9f4;
+        --paper: #fffdf9;
+        --blush: #f8dce6;
+        --pink: #e85d91;
+        --raspberry: #b91f5b;
+        --plum: #42142a;
+        --coral: #f28b7d;
+        --line: rgba(66, 20, 42, 0.18);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--plum);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
+
+      .shell {
+        width: min(1120px, calc(100% - 48px));
+        margin-inline: auto;
+      }
+
+      header {
+        min-height: 92px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .monogram {
+        font: 700 26px/1 Georgia, "Times New Roman", serif;
+        letter-spacing: -1.5px;
+      }
+
+      .monogram span { color: var(--raspberry); }
+      nav { display: flex; align-items: center; gap: 28px; }
+
+      nav a {
+        padding-block: 12px;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+
+      nav a:last-child {
+        padding: 12px 18px;
+        border: 1px solid var(--plum);
+        border-radius: 999px;
+      }
+
+      .hero {
+        min-height: 680px;
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        align-items: center;
+        gap: 76px;
+        padding-block: 72px;
+      }
+
+      .eyebrow,
+      .section-label,
+      .card-label {
+        margin: 0;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow span { color: var(--pink); margin-right: 8px; }
+      h1, h2, p { margin-top: 0; }
+
+      h1 {
+        margin: 22px 0 26px;
+        font: 400 clamp(64px, 7.6vw, 104px)/0.9 Georgia, "Times New Roman", serif;
+        letter-spacing: -0.065em;
+      }
+
+      .intro {
+        max-width: 590px;
+        margin-bottom: 34px;
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      .intro em,
+      .about h2 em,
+      .cat-copy h2 em {
+        color: var(--raspberry);
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 26px;
+        min-height: 54px;
+        padding: 0 22px;
+        border-radius: 999px;
+        background: var(--raspberry);
+        color: white;
+        font-size: 13px;
+        font-weight: 800;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 0 rgba(66, 20, 42, 0.13);
+      }
+
+      .hero-art {
+        position: relative;
+        min-height: 500px;
+        display: grid;
+        place-items: center;
+        border-radius: 50% 50% 46% 54% / 58% 43% 57% 42%;
+        background: var(--blush);
+      }
+
+      .travel-card {
+        position: relative;
+        z-index: 1;
+        width: 86%;
+        margin: 0;
+        padding: 12px 12px 46px;
+        background: var(--paper);
+        box-shadow: 0 24px 50px rgba(125, 35, 70, 0.16);
+        transform: rotate(-3deg);
+      }
+
+      .travel-card::before {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        top: -15px;
+        width: 108px;
+        height: 32px;
+        background: rgba(232, 93, 145, 0.58);
+        transform: translateX(-50%) rotate(2deg);
+      }
+
+      .travel-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .travel-card figcaption {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 14px;
+        text-align: center;
+        font: italic 15px Georgia, "Times New Roman", serif;
+      }
+
+      .sparkle { position: absolute; color: var(--raspberry); font-size: 30px; }
+      .sparkle.one { left: 5%; top: 15%; }
+      .sparkle.two { right: 12%; bottom: 11%; font-size: 20px; }
+
+      .travel-badge {
+        position: absolute;
+        right: 6%;
+        top: 9%;
+        width: 74px;
+        height: 74px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--raspberry);
+        color: white;
+        font: 700 14px/1 Georgia, "Times New Roman", serif;
+        letter-spacing: 0.08em;
+        transform: rotate(8deg);
+      }
+
+      .ticker {
+        overflow: hidden;
+        background: var(--raspberry);
+        color: white;
+        transform: rotate(-1deg) scale(1.01);
+      }
+
+      .ticker div {
+        min-width: max-content;
+        padding: 18px 0;
+        display: flex;
+        gap: 28px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+      }
+
+      .ticker b { color: var(--blush); }
+      section.section { padding-block: 120px; }
+
+      .section-top {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding-bottom: 22px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section-number {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--raspberry);
+        border-radius: 50%;
+        color: var(--raspberry);
+        font: italic 13px Georgia, "Times New Roman", serif;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 10%;
+        padding-top: 64px;
+      }
+
+      .about h2,
+      .learning h2,
+      .cat-copy h2 {
+        margin-bottom: 0;
+        font: 400 clamp(45px, 5.3vw, 75px)/1 Georgia, "Times New Roman", serif;
+        letter-spacing: -0.05em;
+      }
+
+      .about-copy { padding-top: 8px; font-size: 16px; line-height: 1.75; }
+      .about-copy p + p { margin-top: 22px; }
+      .learning { padding-top: 20px; }
+
+      .learning-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 50px;
+        padding: 58px 0 42px;
+      }
+
+      .learning-heading > p {
+        max-width: 280px;
+        margin-bottom: 4px;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .card {
+        min-height: 340px;
+        padding: 26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid var(--line);
+      }
+
+      .card:nth-child(1) { background: var(--raspberry); color: white; }
+      .card:nth-child(2) { background: var(--blush); }
+      .card:nth-child(3) { background: var(--paper); }
+      .card-number { font: italic 14px Georgia, "Times New Roman", serif; }
+      .card-label { margin-bottom: 18px; }
+
+      .card-text {
+        margin-bottom: 0;
+        font: 400 28px/1.18 Georgia, "Times New Roman", serif;
+        letter-spacing: -0.025em;
+      }
+
+      .cat-layout {
+        display: grid;
+        grid-template-columns: minmax(300px, 0.78fr) 1.22fr;
+        align-items: center;
+        gap: 9%;
+        padding-top: 68px;
+      }
+
+      .cat-photo {
+        position: relative;
+        margin: 0;
+        padding: 16px 16px 54px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        box-shadow: 22px 24px 0 var(--blush);
+        transform: rotate(-1.8deg);
+      }
+
+      .cat-photo img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+      }
+
+      .cat-photo figcaption {
+        position: absolute;
+        left: 18px;
+        bottom: 17px;
+        font: italic 15px Georgia, "Times New Roman", serif;
+      }
+
+      .tape {
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        top: -15px;
+        width: 112px;
+        height: 34px;
+        background: rgba(232, 93, 145, 0.52);
+        transform: translateX(-50%) rotate(2deg);
+      }
+
+      .cat-copy h2 { margin-bottom: 28px; }
+
+      .cat-copy > p {
+        max-width: 520px;
+        margin-bottom: 30px;
+        font-size: 16px;
+        line-height: 1.75;
+      }
+
+      .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+
+      .tags span {
+        padding: 10px 15px;
+        border: 1px solid var(--plum);
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      footer {
+        min-height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid var(--line);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+
+      footer p { margin: 0; }
+
+      @media (max-width: 850px) {
+        .hero, .about-grid, .cat-layout { grid-template-columns: 1fr; }
+        .hero { gap: 46px; }
+        .hero-art { min-height: 460px; }
+        .card-grid { grid-template-columns: 1fr; }
+        .card { min-height: 250px; }
+        .about-grid { gap: 38px; }
+        .cat-layout { gap: 76px; }
+        .cat-photo { width: min(100%, 520px); justify-self: center; }
+      }
+
+      @media (max-width: 620px) {
+        .shell { width: min(100% - 30px, 1120px); }
+        header { min-height: 78px; }
+        nav a:not(:last-child) { display: none; }
+
+        .hero { min-height: auto; padding-block: 62px; text-align: center; }
+        h1 { margin-inline: auto; font-size: clamp(54px, 16vw, 76px); }
+        .intro { margin-inline: auto; font-size: 16px; }
+        .hero-art { min-height: 390px; }
+        .travel-card { width: 90%; padding: 10px 10px 44px; }
+
+        section.section { padding-block: 86px; }
+        .section-top { justify-content: center; }
+        .about-grid, .learning-heading, .card, .cat-copy, footer { text-align: center; }
+
+        .about h2,
+        .learning h2,
+        .cat-copy h2 { font-size: 43px; }
+
+        .learning-heading { flex-direction: column; align-items: center; gap: 20px; }
+        .learning-heading > p, .card-text, .cat-copy > p { margin-inline: auto; }
+        .cat-photo { width: calc(100% - 10px); box-shadow: 12px 14px 0 var(--blush); }
+        .cat-photo figcaption { left: 0; right: 0; text-align: center; }
+        .tags { justify-content: center; }
+
+        footer {
+          min-height: 150px;
+          justify-content: center;
+          flex-direction: column;
+          gap: 16px;
+          padding-block: 26px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        * { transition-duration: 0.01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="shell">
+      <a class="monogram" href="#top" aria-label="Sophia Ma, home">SM<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#learning">Learning</a>
+        <a href="#favorite">Favorite</a>
+        <a href="#travel">Travel</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow"><span>✦</span> Student · curious mind · traveler</p>
+          <h1 id="hero-title">Hi, I&apos;m<br>Sophia Ma.</h1>
+          <p class="intro">
+            I&apos;m a student currently exploring <em>Python and AI</em> — learning
+            how thoughtful code can turn ideas into useful, creative things.
+            I also love traveling, discovering new cities, and collecting bright memories along the way.
+          </p>
+          <a class="button" href="#learning">See what I&apos;m learning <span>↓</span></a>
+        </div>
+
+        <div class="hero-art" id="travel">
+          <span class="sparkle one" aria-hidden="true">✦</span>
+          <span class="sparkle two" aria-hidden="true">✦</span>
+          <figure class="travel-card">
+            <img src="travel-nyc.png" alt="Sophia enjoying a sunny view of New York City with the Empire State Building behind her" width="1780" height="1332">
+            <figcaption>New city, new view, very happy me.</figcaption>
+          </figure>
+          <div class="travel-badge" aria-hidden="true">NYC</div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div>
+          <span>LEARNING PYTHON</span><b>♥</b>
+          <span>EXPLORING AI</span><b>♥</b>
+          <span>LOVING TRAVEL</span><b>♥</b>
+          <span>READY FOR THE NEXT ADVENTURE</span><b>♥</b>
+        </div>
+      </div>
+
+      <section class="section about shell" id="about" aria-labelledby="about-title">
+        <div class="section-top">
+          <span class="section-number">01</span>
+          <p class="section-label">A little about me</p>
+        </div>
+        <div class="about-grid">
+          <h2 id="about-title">I&apos;m learning how ideas become <em>something real.</em></h2>
+          <div class="about-copy">
+            <p>
+              I&apos;m Sophia Ma, a student with a growing interest in technology,
+              creativity, travel, and the small details that make projects feel thoughtful.
+            </p>
+            <p>
+              Right now, I&apos;m exploring Python and AI one experiment at a time.
+              I also love traveling and discovering new places. This is my space to share
+              what I&apos;m learning, building, and enjoying along the way.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section learning shell" id="learning" aria-labelledby="learning-title">
+        <div class="section-top">
+          <span class="section-number">02</span>
+          <p class="section-label">What I&apos;m exploring</p>
+        </div>
+        <div class="learning-heading">
+          <h2 id="learning-title">Learning by trying,<br>testing, and making.</h2>
+          <p>Three areas currently filling my notebooks and browser tabs.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <span class="card-number">01</span>
+            <div>
+              <p class="card-label">Python</p>
+              <p class="card-text">Building a strong foundation through small programs and practice.</p>
+            </div>
+          </article>
+          <article class="card">
+            <span class="card-number">02</span>
+            <div>
+              <p class="card-label">Artificial intelligence</p>
+              <p class="card-text">Exploring how AI works and what people can create with it.</p>
+            </div>
+          </article>
+          <article class="card">
+            <span class="card-number">03</span>
+            <div>
+              <p class="card-label">Projects</p>
+              <p class="card-text">Turning new concepts into useful experiments, one step at a time.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section shell" id="favorite" aria-labelledby="favorite-title">
+        <div class="section-top">
+          <span class="section-number">03</span>
+          <p class="section-label">A favorite face</p>
+        </div>
+        <div class="cat-layout">
+          <figure class="cat-photo">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="cat-bunny.png" alt="A fluffy cream-colored cat wearing soft bunny ears" width="546" height="726" loading="lazy">
+            <figcaption>Bunny ears. Serious business.</figcaption>
+          </figure>
+          <div class="cat-copy">
+            <h2 id="favorite-title">Proof that cute things make <em>everything better.</em></h2>
+            <p>
+              One fluffy face, two bunny ears, and a permanent place in my camera roll.
+              Some portfolio pieces simply speak for themselves.
+            </p>
+            <div class="tags" aria-label="Photo themes">
+              <span>Soft things</span>
+              <span>Pink details</span>
+              <span>Instant joy</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="shell">
+      <a class="monogram" href="#top" aria-label="Sophia Ma, back to top">SM<span>.</span></a>
+      <p>Sophia Ma · Student · Python · AI · Travel</p>
+      <p>Made with care and plenty of pink.</p>
+    </footer>
+  </body>
+</html>
