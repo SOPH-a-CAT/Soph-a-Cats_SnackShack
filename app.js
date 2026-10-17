@@ -1,26 +1,17 @@
 const categories = [
-  { id: 'chips', title: 'Chips & Crunch', color: '#ffd93d' },
-  { id: 'cookies', title: 'Cookies & Pastries', color: '#ff8bbb' },
+  { id: 'chips', title: 'Chips', color: '#ffd93d' },
   { id: 'candy', title: 'Candy', color: '#95db45' },
-  { id: 'drinks', title: 'Cold Drinks', color: '#52c7ff' },
 ];
 
 const menu = [
-  { id: 'doritos-cool-ranch', category: 'chips', brand: 'Doritos®', flavor: 'Cool Ranch®', name: 'Doritos® Cool Ranch®', price: 1.75, image: 'products/doritos-cool-ranch.jpg', backImage: 'products/doritos-cool-ranch-back.jpg', alt: 'Blue bag of Doritos Cool Ranch tortilla chips', color: '#52c7ff' },
-  { id: 'doritos-nacho-cheese', category: 'chips', brand: 'Doritos®', flavor: 'Nacho Cheese', name: 'Doritos® Nacho Cheese', price: 1.75, image: 'products/doritos-nacho-cheese.jpg', backImage: 'products/doritos-nacho-cheese-back.jpg', alt: 'Red bag of Doritos Nacho Cheese tortilla chips', color: '#ff8d4d' },
-  { id: 'cheetos-crunchy', category: 'chips', brand: 'CHEETOS®', flavor: 'Crunchy Cheese', name: 'CHEETOS® Crunchy Cheese', price: 1.75, image: 'products/cheetos-crunchy.jpg', backImage: 'products/cheetos-crunchy-back.jpg', alt: 'Orange bag of CHEETOS Crunchy cheese snacks', color: '#ffb347' },
-  { id: 'lays-classic', category: 'chips', brand: "LAY'S®", flavor: 'Classic', name: "LAY'S® Classic", price: 1.5, image: 'products/lays-classic.jpg', backImage: 'products/lays-classic-back.jpg', alt: "Yellow bag of LAY'S Classic potato chips", color: '#ffd93d' },
-  { id: 'oreo-original', category: 'cookies', brand: 'OREO®', flavor: 'Original', name: 'OREO® Original', price: 1.25, image: 'products/oreo-original.jpg', backImage: 'products/oreo-original-back.jpg', alt: 'Blue package of original OREO sandwich cookies', color: '#b8a1ff' },
-  { id: 'poptarts-frosted-strawberry', category: 'cookies', brand: 'Pop-Tarts®', flavor: 'Frosted Strawberry', name: 'Pop-Tarts® Frosted Strawberry', price: 1.5, image: 'products/poptarts-frosted-strawberry.jpg', backImage: 'products/poptarts-frosted-strawberry-back.jpg', alt: 'Blue box of Frosted Strawberry Pop-Tarts', color: '#ff8bbb' },
-  { id: 'poptarts-brown-sugar-cinnamon', category: 'cookies', brand: 'Pop-Tarts®', flavor: 'Brown Sugar Cinnamon', name: 'Pop-Tarts® Brown Sugar Cinnamon', price: 1.5, image: 'products/poptarts-brown-sugar-cinnamon.jpg', backImage: 'products/poptarts-brown-sugar-cinnamon-back.jpg', alt: 'Box of Frosted Brown Sugar Cinnamon Pop-Tarts', color: '#e7b37a' },
-  { id: 'mms-milk-chocolate', category: 'candy', brand: "M&M'S®", flavor: 'Milk Chocolate', name: "M&M'S® Milk Chocolate", price: 1.5, image: 'products/mms-milk-chocolate.jpg', backImage: 'products/mms-milk-chocolate-back.jpg', alt: "Brown bag of M&M'S milk chocolate candy", color: '#ffd93d' },
-  { id: 'mms-peanut', category: 'candy', brand: "M&M'S®", flavor: 'Peanut', name: "M&M'S® Peanut", price: 1.5, image: 'products/mms-peanut.jpg', backImage: 'products/mms-peanut-back.jpg', alt: "Yellow bag of M&M'S Peanut candy", color: '#ffe66d' },
-  { id: 'skittles-original', category: 'candy', brand: 'SKITTLES®', flavor: 'Original', name: 'SKITTLES® Original', price: 1.25, image: 'products/skittles-original.jpg', backImage: 'products/skittles-original-back.jpg', alt: 'Red bag of Original SKITTLES fruity candy', color: '#95db45' },
-  { id: 'skittles-wild-berry', category: 'candy', brand: 'SKITTLES®', flavor: 'Wild Berry', name: 'SKITTLES® Wild Berry', price: 1.25, image: 'products/skittles-wild-berry.jpg', backImage: 'products/skittles-wild-berry-back.jpg', alt: 'Purple bag of SKITTLES Wild Berry candy', color: '#b8a1ff' },
-  { id: 'gatorade-cool-blue', category: 'drinks', brand: 'Gatorade®', flavor: 'Cool Blue', name: 'Gatorade® Cool Blue', price: 2, image: 'products/gatorade-cool-blue.jpg', backImage: 'products/gatorade-cool-blue-back.jpg', alt: 'Bottle of Gatorade Cool Blue sports drink', color: '#52c7ff' },
-  { id: 'gatorade-fruit-punch', category: 'drinks', brand: 'Gatorade®', flavor: 'Fruit Punch', name: 'Gatorade® Fruit Punch', price: 2, image: 'products/gatorade-fruit-punch.jpg', backImage: 'products/gatorade-fruit-punch-back.jpg', alt: 'Bottle of Gatorade Fruit Punch sports drink', color: '#ff8b8b' },
-  { id: 'gatorade-lemon-lime', category: 'drinks', brand: 'Gatorade®', flavor: 'Lemon-Lime', name: 'Gatorade® Lemon-Lime', price: 2, image: 'products/gatorade-lemon-lime.jpg', backImage: 'products/gatorade-lemon-lime-back.jpg', alt: 'Bottle of Gatorade Lemon-Lime sports drink', color: '#d9f06a' },
-  { id: 'aquafina-water', category: 'drinks', brand: 'Aquafina®', flavor: 'Purified Water', name: 'Aquafina® Purified Water', price: 1, image: 'products/aquafina-water.jpg', backImage: 'products/aquafina-water-back.jpg', alt: 'Bottle of Aquafina purified water', color: '#bde9ff' },
+  { id: 'doritos-cool-ranch', category: 'chips', brand: 'Doritos', flavor: 'Cool Ranch', name: 'Doritos Cool Ranch', price: 1.75, image: 'products/doritos.png', alt: 'Blue bag of Doritos Cool Ranch tortilla chips', color: '#52c7ff' },
+  { id: 'cheetos-flamin-hot', category: 'chips', brand: 'Cheetos', flavor: 'Flamin’ Hot Crunchy', name: 'Cheetos Flamin’ Hot Crunchy', price: 1.75, image: 'products/hot_cheeto.png', alt: 'Red and orange bag of Cheetos Flamin’ Hot Crunchy snacks', color: '#ff734d' },
+  { id: 'takis-fuego', category: 'chips', brand: 'Takis', flavor: 'Fuego', name: 'Takis Fuego', price: 1.75, image: 'products/takis.png', alt: 'Purple bag of Takis Fuego rolled tortilla chips', color: '#b8a1ff' },
+  { id: 'kitkat-milk-chocolate', category: 'candy', brand: 'KitKat', flavor: 'Milk Chocolate', name: 'KitKat Milk Chocolate', price: 1.5, image: 'products/kitkat.png', alt: 'Red KitKat milk chocolate wafer bar package', color: '#ff8b8b' },
+  { id: 'reeses-peanut-butter-cups', category: 'candy', brand: 'Reese’s', flavor: 'Peanut Butter Cups', name: 'Reese’s Peanut Butter Cups', price: 1.5, image: 'products/reeses.png', alt: 'Orange Reese’s peanut butter cups package', color: '#ffb347' },
+  { id: 'skittles-original', category: 'candy', brand: 'Skittles', flavor: 'Original', name: 'Skittles Original', price: 1.25, image: 'products/skittles.png', alt: 'Red bag of Skittles Original fruit candy', color: '#95db45' },
+  { id: 'sour-patch-kids-original', category: 'candy', brand: 'Sour Patch Kids', flavor: 'Original', name: 'Sour Patch Kids Original', price: 1.5, image: 'products/sour_patch_kids.png', alt: 'Yellow bag of Sour Patch Kids candy', color: '#ffd93d' },
+  { id: 'trolli-sour-brite-crawlers', category: 'candy', brand: 'Trolli', flavor: 'Sour Brite Crawlers', name: 'Trolli Sour Brite Crawlers', price: 1.5, image: 'products/trolli.png', alt: 'Black bag of Trolli Sour Brite Crawlers gummy candy', color: '#52c7ff' },
 ];
 
 const productId = new URLSearchParams(location.search).get('product') || '';
@@ -32,7 +23,8 @@ try {
 } catch {
   localStorage.removeItem('snack-shack-cart');
 }
-const cart = new Map(Object.entries(storedCart));
+const availableItemIds = new Set(menu.map((item) => item.id));
+const cart = new Map(Object.entries(storedCart).filter(([id]) => availableItemIds.has(id)));
 
 const menuGrid = document.querySelector('#menuGrid');
 const cartButton = document.querySelector('#cartButton');
@@ -91,14 +83,8 @@ function renderProductPage(item) {
     <section class="product-detail" style="--item-color:${item.color}" aria-labelledby="productTitle">
       <a class="detail-back" href="./#menu"><span aria-hidden="true">←</span> Back to menu</a>
       <div class="detail-grid">
-        <div class="detail-thumbnails" aria-label="Package views">
-          <button class="detail-thumbnail selected" type="button" data-package-view="front" aria-pressed="true"><img src="${item.image}" alt="" /><span>Front</span></button>
-          <button class="detail-thumbnail" type="button" data-package-view="back" aria-pressed="false"><img src="${item.backImage}" alt="" /><span>Back</span></button>
-        </div>
         <div class="detail-gallery">
-          <div class="detail-image-stage"><img id="detailImage" src="${item.image}" alt="Front of the ${item.name} package" /></div>
-          <div class="gallery-dots" aria-hidden="true"><span class="selected"></span><span></span></div>
-          <p id="packageViewLabel">Front of package</p>
+          <div class="detail-image-stage"><img src="${item.image}" alt="${item.alt}" /></div>
         </div>
         <div class="detail-info">
           <p class="detail-kicker">${categories.find((category) => category.id === item.category).title}</p>
@@ -114,25 +100,7 @@ function renderProductPage(item) {
     </section>`;
 
   let detailQuantity = 1;
-  const detailImage = document.querySelector('#detailImage');
   const quantityLabel = document.querySelector('#detailQuantity');
-  const viewLabel = document.querySelector('#packageViewLabel');
-  const dots = [...document.querySelectorAll('.gallery-dots span')];
-
-  document.querySelectorAll('[data-package-view]').forEach((button, index) => {
-    button.addEventListener('click', () => {
-      const isFront = button.dataset.packageView === 'front';
-      detailImage.src = isFront ? item.image : item.backImage;
-      detailImage.alt = `${isFront ? 'Front' : 'Back'} of the ${item.name} package`;
-      viewLabel.textContent = `${isFront ? 'Front' : 'Back'} of package`;
-      document.querySelectorAll('[data-package-view]').forEach((entry) => {
-        const selected = entry === button;
-        entry.classList.toggle('selected', selected);
-        entry.setAttribute('aria-pressed', String(selected));
-      });
-      dots.forEach((dot, dotIndex) => dot.classList.toggle('selected', dotIndex === index));
-    });
-  });
 
   document.querySelector('#detailDecrease').addEventListener('click', () => {
     detailQuantity = Math.max(1, detailQuantity - 1);
