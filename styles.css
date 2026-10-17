@@ -55,8 +55,28 @@ h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { line-height: 1; }
 h1 { max-width: 780px; margin-bottom: 25px; font-family: 'Oswald', Arial, sans-serif; font-size: clamp(3.5rem, 7vw, 7.5rem); font-weight: 700; letter-spacing: -.07em; text-transform: uppercase; }
 
-.hero-photo { display: block; width: min(720px, 92vw); height: auto; margin: 30px auto 0; }
-.shop-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: clamp(32px, 5vw, 78px); max-width: 1500px; margin: 0 auto; padding: 44px clamp(20px, 5vw, 80px) 110px; scroll-margin-top: 75px; }
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(380px, 1.1fr);
+  align-items: center;
+  gap: clamp(30px, 5vw, 90px);
+  min-height: calc(100svh - 78px);
+  padding: clamp(52px, 7vw, 110px) clamp(24px, 7vw, 110px);
+  border-bottom: 2px solid var(--line);
+  background-color: var(--orange);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, .34) 0 3px, transparent 3.5px);
+  background-size: 44px 44px;
+}
+.hero-copy { position: relative; z-index: 1; max-width: 650px; }
+.hero-eyebrow { margin-bottom: 20px; font-size: 1rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.hero h1 { margin-bottom: 30px; font-size: clamp(4.8rem, 9vw, 9rem); line-height: .88; }
+.hero-details { margin-bottom: 34px; font-size: clamp(1.15rem, 2vw, 1.6rem); font-weight: 600; line-height: 1.45; }
+.hero-menu-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 42px; min-width: 230px; padding: 18px 22px; border: 2px solid var(--line); border-radius: 8px; background: white; font-size: 1.2rem; font-weight: 700; text-decoration: none; box-shadow: 5px 5px 0 var(--line); }
+.hero-menu-link:hover { background: var(--yellow); transform: translateY(-2px); }
+.hero-menu-link span { font-size: 1.55rem; line-height: 1; }
+.hero-image { display: grid; place-items: center; min-width: 0; }
+.hero-image img { display: block; width: min(720px, 100%); height: auto; filter: drop-shadow(12px 16px 0 rgba(35, 27, 21, .18)); }
+.shop-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: clamp(32px, 5vw, 78px); max-width: 1500px; margin: 0 auto; padding: 90px clamp(20px, 5vw, 80px) 110px; scroll-margin-top: 75px; }
 .location-card { position: sticky; top: 108px; align-self: start; padding: 26px; border: 2px solid var(--line); border-radius: 10px; background: var(--blue); box-shadow: var(--shadow); }
 .location-card h2 { margin-bottom: 30px; font-family: 'Oswald', Arial, sans-serif; font-size: 2rem; font-weight: 700; text-transform: uppercase; letter-spacing: -.05em; }
 .location-name { margin-bottom: 12px; font-size: 1.25rem; line-height: 1.25; }
@@ -151,6 +171,8 @@ footer { display: flex; align-items: center; min-height: 120px; padding: 26px cl
 .detail-add:hover { background: var(--orange); color: var(--ink); box-shadow: 4px 4px 0 var(--line); }
 
 @media (max-width: 1050px) {
+  .hero { grid-template-columns: minmax(0, .95fr) minmax(340px, 1.05fr); gap: 28px; }
+  .hero h1 { font-size: clamp(4.2rem, 9vw, 7.2rem); }
   .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .detail-grid { grid-template-columns: minmax(300px, 1fr) minmax(300px, .9fr); gap: 28px; }
   .detail-image-stage { min-height: 480px; }
@@ -163,6 +185,12 @@ footer { display: flex; align-items: center; min-height: 120px; padding: 26px cl
   .menu-nav-button { min-width: 88px; padding: 10px 14px; font-size: .9rem; }
   .brand { font-size: .88rem; }
   .brand-mark { width: 34px; height: 34px; }
+  .hero { grid-template-columns: 1fr; gap: 32px; min-height: auto; padding: 58px 22px 64px; background-size: 34px 34px; }
+  .hero-copy { max-width: 560px; }
+  .hero h1 { max-width: 500px; margin-bottom: 24px; font-size: clamp(4rem, 20vw, 6.5rem); }
+  .hero-details { font-size: 1.15rem; }
+  .hero-menu-link { min-width: 205px; padding: 15px 18px; }
+  .hero-image img { width: min(520px, 100%); filter: drop-shadow(8px 10px 0 rgba(35, 27, 21, .18)); }
   .shop-layout { display: flex; flex-direction: column; padding-block: 62px 78px; }
   .location-card { position: static; order: 2; }
   .menu-content { order: 1; }

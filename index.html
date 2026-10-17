@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ff5d2a" />
     <meta name="description" content="Menu, prices, pickup location, and lunch hours for The Snack Shack." />
-    <link rel="canonical" href="https://soph-a-cat.github.io/Soph-a-Cats_SnackShack" />
+    <link rel="canonical" href="https://the-snack-shack.michaelwolfum.chatgpt.site" />
     <meta property="og:title" content="The Snack Shack" />
     <meta property="og:description" content="Menu, prices, pickup location, and lunch hours for The Snack Shack." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://soph-a-cat.github.io/Soph-a-Cats_SnackShack" />
-    <meta property="og:image" content="https://soph-a-cat.github.io/Soph-a-Cats_SnackShack/og.png" />
+    <meta property="og:url" content="https://the-snack-shack.michaelwolfum.chatgpt.site" />
+    <meta property="og:image" content="https://the-snack-shack.michaelwolfum.chatgpt.site/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="The Snack Shack" />
     <meta name="twitter:description" content="Menu, prices, pickup location, and lunch hours for The Snack Shack." />
-    <meta name="twitter:image" content="https://soph-a-cat.github.io/Soph-a-Cats_SnackShack/og.png" />
+    <meta name="twitter:image" content="https://the-snack-shack.michaelwolfum.chatgpt.site/og.png" />
     <title>The Snack Shack Menu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +25,7 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="./#menu" aria-label="The Snack Shack home">
+      <a class="brand" href="./" aria-label="The Snack Shack home">
         <span class="brand-mark" aria-hidden="true">S</span>
         <span>The Snack Shack</span>
       </a>
@@ -39,7 +39,17 @@
     </header>
 
     <main>
-      <img class="hero-photo" src="images/hero.png" alt="Assorted bags of chips with loose chips" />
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Lunch pickup</p>
+          <h1 id="heroTitle">The Snack Shack</h1>
+          <p class="hero-details">Monday–Friday · 11:30 AM–1:15 PM<br />Student Center, East Hallway</p>
+          <a class="hero-menu-link" href="#menu">Menu <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-image">
+          <img src="images/hero.png" alt="Assorted bags of chips with loose chips" />
+        </div>
+      </section>
 
       <section class="shop-layout" id="menu" aria-labelledby="menuTitle">
         <aside class="location-card" id="location">
