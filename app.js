@@ -1,8 +1,8 @@
 const categories = [
-  { id: 'chips', title: 'Chips & Crunch', note: 'Salty, cheesy, and ready to grab.', color: '#ffd93d' },
-  { id: 'cookies', title: 'Cookies & Pastries', note: 'Something sweet for the lunch bell.', color: '#ff8bbb' },
-  { id: 'candy', title: 'Candy', note: 'Classic favorites in more than one flavor.', color: '#95db45' },
-  { id: 'drinks', title: 'Cold Drinks', note: 'Cool down and keep moving.', color: '#52c7ff' },
+  { id: 'chips', title: 'Chips & Crunch', note: 'This section includes savory chips and cheese-flavored snacks.', color: '#ffd93d' },
+  { id: 'cookies', title: 'Cookies & Pastries', note: 'This section includes cookies and toaster pastries.', color: '#ff8bbb' },
+  { id: 'candy', title: 'Candy', note: 'This section includes chocolate and fruit-flavored candy.', color: '#95db45' },
+  { id: 'drinks', title: 'Cold Drinks', note: 'This section includes sports drinks and bottled water.', color: '#52c7ff' },
 ];
 
 const menu = [
@@ -70,7 +70,7 @@ function renderMenu() {
             ${item.tag ? `<span class="product-tag product-tag-${item.tag.toLowerCase()}">${item.tag}</span>` : ''}
             <a class="product-picture" href="?product=${item.id}" style="--item-color:${item.color}" aria-label="View ${item.name} details">
               <img src="${item.image}" alt="${item.alt}" loading="lazy" />
-              <span class="view-product">View item <span aria-hidden="true">→</span></span>
+              <span class="view-product">View product details <span aria-hidden="true">→</span></span>
             </a>
             <div class="product-copy">
               <h4>${item.brand}</h4>
@@ -111,7 +111,7 @@ function renderProductPage(item) {
           <div class="detail-size"><strong>Size</strong><span>Single package</span></div>
           <p class="package-note">Use the Front and Back buttons to inspect the outside packaging before adding it to your cart.</p>
           <div class="detail-buy">
-            <div><strong>Qty.</strong><div class="detail-quantity" aria-label="Quantity for ${item.name}"><button id="detailDecrease" type="button" aria-label="Decrease quantity">−</button><strong id="detailQuantity">1</strong><button id="detailIncrease" type="button" aria-label="Increase quantity">+</button></div></div>
+            <div><strong>Quantity</strong><div class="detail-quantity" aria-label="Quantity for ${item.name}"><button id="detailDecrease" type="button" aria-label="Decrease quantity">−</button><strong id="detailQuantity">1</strong><button id="detailIncrease" type="button" aria-label="Increase quantity">+</button></div></div>
             <button class="detail-add" id="detailAdd" type="button">Add to cart</button>
           </div>
         </div>
@@ -149,7 +149,7 @@ function renderProductPage(item) {
   });
   document.querySelector('#detailAdd').addEventListener('click', () => {
     changeQuantity(item.id, detailQuantity);
-    showToast(`${detailQuantity} ${item.name} added!`);
+    showToast(`${detailQuantity} ${item.name} ${detailQuantity === 1 ? 'was' : 'were'} added to your cart.`);
   });
 }
 
@@ -175,7 +175,7 @@ function renderCart() {
 
   const selected = menu.filter((item) => Number(cart.get(item.id)) > 0);
   if (!selected.length) {
-    cartItems.innerHTML = '<div class="empty-cart"><div><span aria-hidden="true">EMPTY</span><h3>Your cart is hungry</h3><p>Add a snack and it’ll show up here.</p></div></div>';
+    cartItems.innerHTML = '<div class="empty-cart"><div><span aria-hidden="true">Cart status</span><h3>Your cart is empty.</h3><p>Select a snack from the menu to add it to your cart.</p></div></div>';
     return;
   }
 
@@ -234,7 +234,7 @@ menuGrid?.addEventListener('click', (event) => {
   if (!button) return;
   const item = menu.find((entry) => entry.id === button.dataset.add);
   changeQuantity(item.id, 1);
-  showToast(`${item.name} added!`);
+  showToast(`${item.name} was added to your cart.`);
 });
 
 cartItems.addEventListener('click', (event) => {
@@ -268,7 +268,7 @@ checkoutForm.addEventListener('submit', (event) => {
   const firstName = String(formData.get('studentName')).trim();
   const { count, cost } = totals();
   const code = `SNACK-${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
-  document.querySelector('#confirmationText').textContent = `${firstName}, your ${count} item${count === 1 ? '' : 's'} (${money(cost)}) will be waiting at the Student Center East Hallway. Pay at pickup.`;
+  document.querySelector('#confirmationText').textContent = `${firstName}, your ${count} item${count === 1 ? '' : 's'} (${money(cost)}) will be waiting at the Student Center East Hallway, and payment will be collected when you arrive.`;
   document.querySelector('#orderCode').textContent = `Pickup code: ${code}`;
   checkoutForm.hidden = true;
   confirmation.hidden = false;
