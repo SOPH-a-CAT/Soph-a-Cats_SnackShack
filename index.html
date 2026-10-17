@@ -28,7 +28,6 @@
       </a>
       <nav aria-label="Main navigation">
         <a class="menu-nav-button" href="./#menu">Menu</a>
-        <span class="header-location"><strong>Pickup location:</strong> Student Center East Hallway</span>
       </nav>
       <button class="cart-button" id="cartButton" type="button" aria-controls="cartPanel" aria-expanded="false">
         <span>Cart</span>
@@ -39,9 +38,7 @@
     <main>
       <section class="shop-layout" id="menu" aria-labelledby="menuTitle">
         <aside class="location-card" id="location">
-          <p class="mini-label">Where to collect your order</p>
           <h2>Pickup location</h2>
-          <div class="location-icon" aria-hidden="true">HERE</div>
           <p class="location-name"><strong>Student Center<br />East Hallway</strong></p>
           <p>Beside the main cafeteria. The entrance has an orange sign.</p>
           <a href="https://www.google.com/maps/search/?api=1&query=Student+Center+East+Hallway" target="_blank" rel="noreferrer">Open in Maps <span aria-hidden="true">↗</span></a>
@@ -54,7 +51,6 @@
         <div class="menu-content">
           <div class="section-heading">
             <h1 id="menuTitle">Menu</h1>
-            <p>The <strong>+</strong> button adds one item to the cart.</p>
           </div>
           <div class="menu-sections" id="menuGrid"></div>
         </div>
@@ -63,8 +59,6 @@
 
     <footer>
       <a class="brand footer-brand" href="./#menu"><span class="brand-mark" aria-hidden="true">S</span><span>The Snack Shack</span></a>
-      <p>The Snack Shack serves students during lunch from Monday through Friday.</p>
-      <a href="./#menu">Back to menu ↑</a>
     </footer>
 
     <div class="scrim" id="scrim" hidden></div>
@@ -77,16 +71,15 @@
       <div class="cart-summary">
         <div><span>Pickup total</span><strong id="cartTotal">$0.00</strong></div>
         <button class="checkout-button" id="checkoutButton" type="button">Continue to checkout <span aria-hidden="true">→</span></button>
-        <p>Payment is collected at pickup, so you do not need to pay online.</p>
+        <p>Payment: at pickup</p>
       </div>
     </aside>
 
     <dialog class="checkout-dialog" id="checkoutDialog">
       <button class="icon-button dialog-close" id="closeCheckout" type="button" aria-label="Close checkout">×</button>
       <form id="checkoutForm">
-        <p class="mini-label">Pickup information</p>
         <h2>Pickup details</h2>
-        <p class="form-intro">The name and school email are used to label the order. This information is not saved after confirmation.</p>
+        <p class="form-intro">Information is not saved after confirmation.</p>
         <label for="studentName">First name</label>
         <input id="studentName" name="studentName" type="text" autocomplete="given-name" required minlength="2" placeholder="Alex" />
         <label for="studentEmail">School email</label>
