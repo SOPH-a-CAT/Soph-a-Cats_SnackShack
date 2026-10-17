@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ff5d2a" />
-    <meta name="description" content="Browse The Snack Shack menu, add items to your cart, and place an order for lunch pickup." />
+    <meta name="description" content="Menu, prices, pickup location, and lunch hours for The Snack Shack." />
     <link rel="canonical" href="https://soph-a-cat.github.io/Soph-a-Cats_SnackShack" />
     <meta property="og:title" content="The Snack Shack" />
-    <meta property="og:description" content="Browse the student snack menu and place an order for lunch pickup." />
+    <meta property="og:description" content="Menu, prices, pickup location, and lunch hours for The Snack Shack." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://soph-a-cat.github.io/Soph-a-Cats_SnackShack" />
     <meta property="og:image" content="https://soph-a-cat.github.io/Soph-a-Cats_SnackShack/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="The Snack Shack" />
-    <meta name="twitter:description" content="Browse the student snack menu and place an order for lunch pickup." />
+    <meta name="twitter:description" content="Menu, prices, pickup location, and lunch hours for The Snack Shack." />
     <meta name="twitter:image" content="https://soph-a-cat.github.io/Soph-a-Cats_SnackShack/og.png" />
-    <title>The Snack Shack | Student Snack Menu and Pickup Orders</title>
+    <title>The Snack Shack Menu</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23ff5d2a%22/><text x=%2250%22 y=%2272%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22900%22 font-size=%2265%22 fill=%22white%22>S</text></svg>" />
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="app.js"></script>
@@ -37,29 +37,13 @@
     </header>
 
     <main>
-      <section class="hero" aria-labelledby="heroTitle">
-        <div class="hero-copy">
-          <p class="eyebrow"><span></span> The Snack Shack is open during lunch from Monday through Friday.</p>
-          <h1 id="heroTitle">Browse snacks and drinks for <em>lunch pickup.</em></h1>
-          <p class="hero-intro">Choose from the available snacks, drinks, and sweet treats, and place a pickup order before the lunch period ends.</p>
-          <a class="primary-link" href="#menu">Browse the full menu <span aria-hidden="true">↓</span></a>
-        </div>
-        <div class="hero-art" aria-label="Doritos Cool Ranch, OREO cookies, and Gatorade Cool Blue" role="img">
-          <img class="hero-product hero-doritos" src="products/doritos-cool-ranch.jpg" alt="" />
-          <img class="hero-product hero-gatorade" src="products/gatorade-cool-blue.jpg" alt="" />
-          <img class="hero-product hero-oreo" src="products/oreo-original.jpg" alt="" />
-          <span class="spark spark-one">✦</span>
-          <span class="spark spark-two">✦</span>
-        </div>
-      </section>
-
       <section class="shop-layout" id="menu" aria-labelledby="menuTitle">
         <aside class="location-card" id="location">
           <p class="mini-label">Where to collect your order</p>
           <h2>Pickup location</h2>
           <div class="location-icon" aria-hidden="true">HERE</div>
           <p class="location-name"><strong>Student Center<br />East Hallway</strong></p>
-          <p>The Snack Shack is beside the main cafeteria and is marked with an orange sign.</p>
+          <p>Beside the main cafeteria. The entrance has an orange sign.</p>
           <a href="https://www.google.com/maps/search/?api=1&query=Student+Center+East+Hallway" target="_blank" rel="noreferrer">Open in Maps <span aria-hidden="true">↗</span></a>
           <div class="hours">
             <span>Lunch hours</span>
@@ -69,23 +53,10 @@
 
         <div class="menu-content">
           <div class="section-heading">
-            <div>
-              <p class="eyebrow"><span></span> The menu is organized by snack type.</p>
-              <h2 id="menuTitle">Browse the available snacks and drinks.</h2>
-            </div>
-            <p>Use the <strong>+</strong> button to add an item to your cart.</p>
+            <h1 id="menuTitle">Menu</h1>
+            <p>The <strong>+</strong> button adds one item to the cart.</p>
           </div>
           <div class="menu-sections" id="menuGrid"></div>
-        </div>
-      </section>
-
-      <section class="how-it-works" aria-labelledby="howTitle">
-        <p class="mini-label">How pickup ordering works</p>
-        <h2 id="howTitle">Follow these steps to place a pickup order.</h2>
-        <div class="steps">
-          <article><span>1</span><h3>Choose your items</h3><p>Select the snacks and drinks that you would like to order.</p></article>
-          <article><span>2</span><h3>Review your cart</h3><p>Confirm your items, quantities, and pickup total before continuing.</p></article>
-          <article><span>3</span><h3>Collect your order</h3><p>Complete the checkout form and collect your order at the Snack Shack.</p></article>
         </div>
       </section>
     </main>
@@ -99,7 +70,7 @@
     <div class="scrim" id="scrim" hidden></div>
     <aside class="cart-panel" id="cartPanel" aria-labelledby="cartTitle" aria-hidden="true">
       <div class="cart-header">
-        <div><p class="mini-label">Items selected for pickup</p><h2 id="cartTitle">Your cart</h2></div>
+        <h2 id="cartTitle">Cart</h2>
         <button class="icon-button" id="closeCart" type="button" aria-label="Close cart">×</button>
       </div>
       <div class="cart-items" id="cartItems"></div>
@@ -114,19 +85,17 @@
       <button class="icon-button dialog-close" id="closeCheckout" type="button" aria-label="Close checkout">×</button>
       <form id="checkoutForm">
         <p class="mini-label">Pickup information</p>
-        <h2>Enter your pickup details.</h2>
-        <p class="form-intro">Enter your name and school email so the club can label your order; the information is not saved after the confirmation is displayed.</p>
+        <h2>Pickup details</h2>
+        <p class="form-intro">The name and school email are used to label the order. This information is not saved after confirmation.</p>
         <label for="studentName">First name</label>
         <input id="studentName" name="studentName" type="text" autocomplete="given-name" required minlength="2" placeholder="Alex" />
         <label for="studentEmail">School email</label>
         <input id="studentEmail" name="studentEmail" type="email" autocomplete="email" required placeholder="alex@school.edu" />
         <button class="checkout-button" type="submit">Place pickup order</button>
-        <p class="privacy-note">This is a device-only demo checkout—no account is created and no details are sent anywhere.</p>
       </form>
       <div class="confirmation" id="confirmation" hidden>
         <span aria-hidden="true">✓</span>
-        <p class="mini-label">Order confirmation</p>
-        <h2>Your pickup order has been recorded.</h2>
+        <h2>Order recorded</h2>
         <p id="confirmationText"></p>
         <strong id="orderCode"></strong>
         <button class="checkout-button" id="doneButton" type="button">Done</button>
