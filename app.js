@@ -1,18 +1,18 @@
 const categories = [
-  { id: 'chips', title: 'Chips & Crunch', note: 'This section includes savory chips and cheese-flavored snacks.', color: '#ffd93d' },
-  { id: 'cookies', title: 'Cookies & Pastries', note: 'This section includes cookies and toaster pastries.', color: '#ff8bbb' },
-  { id: 'candy', title: 'Candy', note: 'This section includes chocolate and fruit-flavored candy.', color: '#95db45' },
-  { id: 'drinks', title: 'Cold Drinks', note: 'This section includes sports drinks and bottled water.', color: '#52c7ff' },
+  { id: 'chips', title: 'Chips & Crunch', color: '#ffd93d' },
+  { id: 'cookies', title: 'Cookies & Pastries', color: '#ff8bbb' },
+  { id: 'candy', title: 'Candy', color: '#95db45' },
+  { id: 'drinks', title: 'Cold Drinks', color: '#52c7ff' },
 ];
 
 const menu = [
   { id: 'doritos-cool-ranch', category: 'chips', brand: 'Doritos®', flavor: 'Cool Ranch®', name: 'Doritos® Cool Ranch®', price: 1.75, image: 'products/doritos-cool-ranch.jpg', backImage: 'products/doritos-cool-ranch-back.jpg', alt: 'Blue bag of Doritos Cool Ranch tortilla chips', color: '#52c7ff' },
   { id: 'doritos-nacho-cheese', category: 'chips', brand: 'Doritos®', flavor: 'Nacho Cheese', name: 'Doritos® Nacho Cheese', price: 1.75, image: 'products/doritos-nacho-cheese.jpg', backImage: 'products/doritos-nacho-cheese-back.jpg', alt: 'Red bag of Doritos Nacho Cheese tortilla chips', color: '#ff8d4d' },
-  { id: 'cheetos-crunchy', category: 'chips', brand: 'CHEETOS®', flavor: 'Crunchy Cheese', name: 'CHEETOS® Crunchy Cheese', price: 1.75, image: 'products/cheetos-crunchy.jpg', backImage: 'products/cheetos-crunchy-back.jpg', alt: 'Orange bag of CHEETOS Crunchy cheese snacks', color: '#ffb347', tag: 'New' },
+  { id: 'cheetos-crunchy', category: 'chips', brand: 'CHEETOS®', flavor: 'Crunchy Cheese', name: 'CHEETOS® Crunchy Cheese', price: 1.75, image: 'products/cheetos-crunchy.jpg', backImage: 'products/cheetos-crunchy-back.jpg', alt: 'Orange bag of CHEETOS Crunchy cheese snacks', color: '#ffb347' },
   { id: 'lays-classic', category: 'chips', brand: "LAY'S®", flavor: 'Classic', name: "LAY'S® Classic", price: 1.5, image: 'products/lays-classic.jpg', backImage: 'products/lays-classic-back.jpg', alt: "Yellow bag of LAY'S Classic potato chips", color: '#ffd93d' },
   { id: 'oreo-original', category: 'cookies', brand: 'OREO®', flavor: 'Original', name: 'OREO® Original', price: 1.25, image: 'products/oreo-original.jpg', backImage: 'products/oreo-original-back.jpg', alt: 'Blue package of original OREO sandwich cookies', color: '#b8a1ff' },
   { id: 'poptarts-frosted-strawberry', category: 'cookies', brand: 'Pop-Tarts®', flavor: 'Frosted Strawberry', name: 'Pop-Tarts® Frosted Strawberry', price: 1.5, image: 'products/poptarts-frosted-strawberry.jpg', backImage: 'products/poptarts-frosted-strawberry-back.jpg', alt: 'Blue box of Frosted Strawberry Pop-Tarts', color: '#ff8bbb' },
-  { id: 'poptarts-brown-sugar-cinnamon', category: 'cookies', brand: 'Pop-Tarts®', flavor: 'Brown Sugar Cinnamon', name: 'Pop-Tarts® Brown Sugar Cinnamon', price: 1.5, image: 'products/poptarts-brown-sugar-cinnamon.jpg', backImage: 'products/poptarts-brown-sugar-cinnamon-back.jpg', alt: 'Box of Frosted Brown Sugar Cinnamon Pop-Tarts', color: '#e7b37a', tag: 'Limited' },
+  { id: 'poptarts-brown-sugar-cinnamon', category: 'cookies', brand: 'Pop-Tarts®', flavor: 'Brown Sugar Cinnamon', name: 'Pop-Tarts® Brown Sugar Cinnamon', price: 1.5, image: 'products/poptarts-brown-sugar-cinnamon.jpg', backImage: 'products/poptarts-brown-sugar-cinnamon-back.jpg', alt: 'Box of Frosted Brown Sugar Cinnamon Pop-Tarts', color: '#e7b37a' },
   { id: 'mms-milk-chocolate', category: 'candy', brand: "M&M'S®", flavor: 'Milk Chocolate', name: "M&M'S® Milk Chocolate", price: 1.5, image: 'products/mms-milk-chocolate.jpg', backImage: 'products/mms-milk-chocolate-back.jpg', alt: "Brown bag of M&M'S milk chocolate candy", color: '#ffd93d' },
   { id: 'mms-peanut', category: 'candy', brand: "M&M'S®", flavor: 'Peanut', name: "M&M'S® Peanut", price: 1.5, image: 'products/mms-peanut.jpg', backImage: 'products/mms-peanut-back.jpg', alt: "Yellow bag of M&M'S Peanut candy", color: '#ffe66d' },
   { id: 'skittles-original', category: 'candy', brand: 'SKITTLES®', flavor: 'Original', name: 'SKITTLES® Original', price: 1.25, image: 'products/skittles-original.jpg', backImage: 'products/skittles-original-back.jpg', alt: 'Red bag of Original SKITTLES fruity candy', color: '#95db45' },
@@ -62,12 +62,11 @@ function renderMenu() {
     <section class="menu-category" id="category-${category.id}" aria-labelledby="category-${category.id}-title">
       <div class="category-heading" style="--category-color:${category.color}">
         <div class="category-number" style="--category-color:${category.color}">${String(categoryIndex + 1).padStart(2, '0')}</div>
-        <div><h3 id="category-${category.id}-title">${category.title}</h3><p>${category.note}</p></div>
+        <h3 id="category-${category.id}-title">${category.title}</h3>
       </div>
       <div class="menu-grid">
         ${menu.filter((item) => item.category === category.id).map((item) => `
           <article class="menu-card">
-            ${item.tag ? `<span class="product-tag product-tag-${item.tag.toLowerCase()}">${item.tag}</span>` : ''}
             <a class="product-picture" href="?product=${item.id}" style="--item-color:${item.color}" aria-label="View ${item.name} details">
               <img src="${item.image}" alt="${item.alt}" loading="lazy" />
               <span class="view-product">View product details <span aria-hidden="true">→</span></span>
@@ -99,7 +98,6 @@ function renderProductPage(item) {
           <button class="detail-thumbnail" type="button" data-package-view="back" aria-pressed="false"><img src="${item.backImage}" alt="" /><span>Back</span></button>
         </div>
         <div class="detail-gallery">
-          ${item.tag ? `<span class="product-tag product-tag-${item.tag.toLowerCase()}">${item.tag}</span>` : ''}
           <div class="detail-image-stage"><img id="detailImage" src="${item.image}" alt="Front of the ${item.name} package" /></div>
           <div class="gallery-dots" aria-hidden="true"><span class="selected"></span><span></span></div>
           <p id="packageViewLabel">Front of package</p>
@@ -175,7 +173,7 @@ function renderCart() {
 
   const selected = menu.filter((item) => Number(cart.get(item.id)) > 0);
   if (!selected.length) {
-    cartItems.innerHTML = '<div class="empty-cart"><div><span aria-hidden="true">Cart status</span><h3>Your cart is empty.</h3><p>Select a snack from the menu to add it to your cart.</p></div></div>';
+    cartItems.innerHTML = '<div class="empty-cart"><h3>Cart is empty.</h3></div>';
     return;
   }
 
