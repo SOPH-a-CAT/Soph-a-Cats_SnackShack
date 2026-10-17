@@ -55,7 +55,8 @@ h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { line-height: 1; }
 h1 { max-width: 780px; margin-bottom: 25px; font-family: 'Oswald', Arial, sans-serif; font-size: clamp(3.5rem, 7vw, 7.5rem); font-weight: 700; letter-spacing: -.07em; text-transform: uppercase; }
 
-.shop-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: clamp(32px, 5vw, 78px); max-width: 1500px; margin: 0 auto; padding: 90px clamp(20px, 5vw, 80px) 110px; scroll-margin-top: 75px; }
+.hero-photo { display: block; width: min(720px, 92vw); height: auto; margin: 30px auto 0; }
+.shop-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: clamp(32px, 5vw, 78px); max-width: 1500px; margin: 0 auto; padding: 44px clamp(20px, 5vw, 80px) 110px; scroll-margin-top: 75px; }
 .location-card { position: sticky; top: 108px; align-self: start; padding: 26px; border: 2px solid var(--line); border-radius: 10px; background: var(--blue); box-shadow: var(--shadow); }
 .location-card h2 { margin-bottom: 30px; font-family: 'Oswald', Arial, sans-serif; font-size: 2rem; font-weight: 700; text-transform: uppercase; letter-spacing: -.05em; }
 .location-name { margin-bottom: 12px; font-size: 1.25rem; line-height: 1.25; }
