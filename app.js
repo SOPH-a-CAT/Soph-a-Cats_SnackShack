@@ -58,10 +58,9 @@ function money(value) {
 
 function renderMenu() {
   if (!menuGrid) return;
-  menuGrid.innerHTML = categories.map((category, categoryIndex) => `
+  menuGrid.innerHTML = categories.map((category) => `
     <section class="menu-category" id="category-${category.id}" aria-labelledby="category-${category.id}-title">
       <div class="category-heading" style="--category-color:${category.color}">
-        <div class="category-number" style="--category-color:${category.color}">${String(categoryIndex + 1).padStart(2, '0')}</div>
         <h3 id="category-${category.id}-title">${category.title}</h3>
       </div>
       <div class="menu-grid">
@@ -69,7 +68,6 @@ function renderMenu() {
           <article class="menu-card">
             <a class="product-picture" href="?product=${item.id}" style="--item-color:${item.color}" aria-label="View ${item.name} details">
               <img src="${item.image}" alt="${item.alt}" loading="lazy" />
-              <span class="view-product">View product details <span aria-hidden="true">→</span></span>
             </a>
             <div class="product-copy">
               <h4>${item.brand}</h4>
@@ -107,7 +105,6 @@ function renderProductPage(item) {
           <h1 id="productTitle">${item.brand}<br /><span>${item.flavor}</span></h1>
           <p class="detail-price">${money(item.price)}</p>
           <div class="detail-size"><strong>Size</strong><span>Single package</span></div>
-          <p class="package-note">Use the Front and Back buttons to inspect the outside packaging before adding it to your cart.</p>
           <div class="detail-buy">
             <div><strong>Quantity</strong><div class="detail-quantity" aria-label="Quantity for ${item.name}"><button id="detailDecrease" type="button" aria-label="Decrease quantity">−</button><strong id="detailQuantity">1</strong><button id="detailIncrease" type="button" aria-label="Increase quantity">+</button></div></div>
             <button class="detail-add" id="detailAdd" type="button">Add to cart</button>
