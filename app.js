@@ -5,13 +5,13 @@ const categories = [
 
 const menu = [
   { id: 'doritos-cool-ranch', category: 'chips', brand: 'Doritos', flavor: 'Cool Ranch', name: 'Doritos Cool Ranch', price: 1.75, image: 'products/doritos.png', alt: 'Blue bag of Doritos Cool Ranch tortilla chips', color: '#52c7ff' },
-  { id: 'cheetos-flamin-hot', category: 'chips', brand: 'Cheetos', flavor: 'Flamin’ Hot Crunchy', name: 'Cheetos Flamin’ Hot Crunchy', price: 1.75, image: 'products/hot_cheeto.png', alt: 'Red and orange bag of Cheetos Flamin’ Hot Crunchy snacks', color: '#ff734d' },
+  { id: 'cheetos-flamin-hot', category: 'chips', brand: 'Cheetos', flavor: 'Flamin’ Hot Crunchy', name: 'Cheetos Flamin’ Hot Crunchy', price: 1.75, image: 'products/hot_cheeto.webp', alt: 'Red and orange bag of Cheetos Flamin’ Hot Crunchy snacks', color: '#ff734d' },
   { id: 'takis-fuego', category: 'chips', brand: 'Takis', flavor: 'Fuego', name: 'Takis Fuego', price: 1.75, image: 'products/takis.png', alt: 'Purple bag of Takis Fuego rolled tortilla chips', color: '#b8a1ff' },
   { id: 'kitkat-milk-chocolate', category: 'candy', brand: 'KitKat', flavor: 'Milk Chocolate', name: 'KitKat Milk Chocolate', price: 1.5, image: 'products/kitkat.png', alt: 'Red KitKat milk chocolate wafer bar package', color: '#ff8b8b' },
   { id: 'reeses-peanut-butter-cups', category: 'candy', brand: 'Reese’s', flavor: 'Peanut Butter Cups', name: 'Reese’s Peanut Butter Cups', price: 1.5, image: 'products/reeses.png', alt: 'Orange Reese’s peanut butter cups package', color: '#ffb347' },
-  { id: 'skittles-original', category: 'candy', brand: 'Skittles', flavor: 'Original', name: 'Skittles Original', price: 1.25, image: 'products/skittles.png', alt: 'Red bag of Skittles Original fruit candy', color: '#95db45' },
+  { id: 'skittles-original', category: 'candy', brand: 'Skittles', flavor: 'Original', name: 'Skittles Original', price: 1.25, image: 'products/skittles.webp', alt: 'Red bag of Skittles Original fruit candy', color: '#95db45' },
   { id: 'sour-patch-kids-original', category: 'candy', brand: 'Sour Patch Kids', flavor: 'Original', name: 'Sour Patch Kids Original', price: 1.5, image: 'products/sour_patch_kids.png', alt: 'Yellow bag of Sour Patch Kids candy', color: '#ffd93d' },
-  { id: 'trolli-sour-brite-crawlers', category: 'candy', brand: 'Trolli', flavor: 'Sour Brite Crawlers', name: 'Trolli Sour Brite Crawlers', price: 1.5, image: 'products/trolli.png', alt: 'Black bag of Trolli Sour Brite Crawlers gummy candy', color: '#52c7ff' },
+  { id: 'trolli-sour-brite-crawlers', category: 'candy', brand: 'Trolli', flavor: 'Sour Brite Crawlers', name: 'Trolli Sour Brite Crawlers', price: 1.5, image: 'products/trolli.webp', alt: 'Black bag of Trolli Sour Brite Crawlers gummy candy', color: '#52c7ff' },
 ];
 
 const productId = new URLSearchParams(location.search).get('product') || '';
